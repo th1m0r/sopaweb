@@ -7,7 +7,7 @@ export default function CadastroAssistido() {
         nome: '',
         dataNascimento: '',
         ponto: '',
-        status: ''
+        status: '',
     });
 
     async function handleSubmit(e) {
@@ -34,7 +34,23 @@ export default function CadastroAssistido() {
                     value={assistido.dataNascimento}
                     onChange={e => setAssistido({ ...assistido, dataNascimento: e.target.value })} />
 
-<button type="submit">Salvar</button>
+                <select
+                    value={assistido.ponto}
+                    onChange={e => setAssistido({ ...assistido, ponto: e.target.value })} >
+                    <option value="CATEDRAL">CATEDRAL</option>
+                    <option value="PRAÇA DA MÃO">PRAÇA DA MÃO</option>
+                    <option value="ALECRIM">ALECRIM</option>
+                </select>
+
+                <select
+                    value={assistido.status}
+                    onChange={e => setAssistido({ ...assistido, status: e.target.value })}>
+                    <option value="INCLUIDO">INCLUIDO</option>
+                    <option value="APTO">APTO</option>
+                    <option value="CADASTRADO">CADASTRADO</option>
+                </select>
+
+                <button type="submit">Salvar</button>
 
             </form>
         </div>
