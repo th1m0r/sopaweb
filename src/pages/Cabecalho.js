@@ -4,8 +4,7 @@ import './Cabecalho';
 
 export default function Cabecalho() {
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link className="navbar-brand" to="/main">
                 <span>Sopa APP</span>
             </Link>
@@ -16,10 +15,18 @@ export default function Cabecalho() {
 
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav mr-auto">
-                    <li>CADASTRO</li>
-                    <li>PESQUISA</li>
-                    <li>ANIVERSARIANTES</li>
-                    <li>FREQUENCIA</li>
+                    <li className="nav-item">
+                        <Link to="/cadastro" className="nav-link">Cadastro</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/pesquisa" className="nav-link">Pesquisa</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/frequencia" className="nav-link">Frequência</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/aniversariantes" className="nav-link">Aniversariantes</Link>
+                    </li>
                 </ul>
             </div>
         </nav >

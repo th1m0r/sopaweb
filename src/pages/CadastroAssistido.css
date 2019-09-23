@@ -1,0 +1,7 @@
+.container-cadastro {
+    margin-top: 50vh;
+	padding: 20px 30px;
+	background-color: rgba(0, 0, 0, .9);
+	color: #FFF;   
+	transform: translateY(-50%);
+}
