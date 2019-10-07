@@ -7,7 +7,7 @@ import CadastroAssistido from './pages/CadastroAssistido';
 import PesquisaAssistido from './pages/PesquisaAssistido';
 import Main from './pages/Main';
 import Rodape from './pages/Rodape';
-import Login from './pages/Login';
+import Login from './Login';
 import ListagemAniversariantes from './pages/ListagemAniversariantes';
 import FrequenciaAssistidos from './pages/FrequenciaAssistidos';
 

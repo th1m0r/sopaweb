@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './include/bootstrap';
 
-import App from './App';
+import Login from './Login';
 
-import { BrowserRouter } from 'react-router-dom';
 
 
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <Login />
     </BrowserRouter>,
     document.getElementById('root'));
 
