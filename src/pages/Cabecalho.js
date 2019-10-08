@@ -4,7 +4,7 @@ import './Cabecalho';
 
 export default function Cabecalho() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <Link className="navbar-brand" to="/main">
                 <span>Sopa APP</span>
             </Link>

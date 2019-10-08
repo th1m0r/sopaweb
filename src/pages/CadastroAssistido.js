@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './CadastroAssistido.css';
 import api from '../services/api';
 
 

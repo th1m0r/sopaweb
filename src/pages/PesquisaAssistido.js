@@ -21,7 +21,7 @@ export default function PesquisaAssitido({ history }) {
     }
 
     return (
-        <div className="container-fluid">
+        <>
             <div className="page-header">
                 <div className="container-fluid">
                     <div className="row">
@@ -89,6 +89,6 @@ export default function PesquisaAssitido({ history }) {
                     </table>
                 </div>
             </div>
-        </div >
+        </>
     )
 }
