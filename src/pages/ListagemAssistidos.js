@@ -22,7 +22,7 @@ export default function PesquisaAssitido({ history }) {
 
     async function handleExcluirAssistido(codigo) {
         const response = await api.delete(`/assistidos/${codigo}`);
-        if (response.status === 200) {
+        if (response.status === 204) {
             setAssistidos(assistidos.filter(a => a.id !== codigo))
         }
     }
