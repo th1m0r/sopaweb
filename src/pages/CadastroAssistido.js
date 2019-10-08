@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import api from '../services/api';
 
 
-export default function CadastroAssistido() {
+export default function CadastroAssistido({ history }) {
 
     const [assistido, setAssistido] = useState({
         id: '',
@@ -87,6 +87,7 @@ export default function CadastroAssistido() {
                             <option value="N">Não Cadastrado</option>
                         </select>
                     </div>
+                    <button className="btn btn-primary pull-right" type="button" onClick={() => history.push("/pesquisa")}>Cancelar</button>&nbsp;&nbsp;
                     <button className="btn btn-primary pull-right" type="submit">Salvar</button>
                 </form>
             </div>

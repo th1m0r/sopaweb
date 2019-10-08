@@ -20,6 +20,13 @@ export default function PesquisaAssitido({ history }) {
         history.push(`/editar/${codigo}`);
     }
 
+    async function handleExcluirAssistido(codigo) {
+        const response = await api.delete(`/assistidos/${codigo}`);
+        if (response.status === 200) {
+            setAssistidos(assistidos.filter(a => a.id !== codigo))
+        }
+    }
+
     return (
         <>
             <div className="page-header">
@@ -74,6 +81,7 @@ export default function PesquisaAssitido({ history }) {
                                 <th>Nome</th>
                                 <th>Ponto</th>
                                 <th>Situação</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,7 +90,14 @@ export default function PesquisaAssitido({ history }) {
                                     <td>{usuario.nome}</td>
                                     <td>{usuario.ponto.nome}</td>
                                     <td>{usuario.situacao === 'A' ? 'APTO' : usuario.situacao === 'N' ? 'NÃO CADASTRADO' : 'CADASTRADO'}</td>
-                                    <td><button type="button" onClick={() => handleEditarAssistido(usuario.id)}>Editar</button></td>
+                                    <td>
+                                        <button type="button"
+                                            className="btn btn-primary"
+                                            onClick={() => handleEditarAssistido(usuario.id)}>Editar</button>&nbsp;&nbsp;
+                                        <button type="button"
+                                            className="btn btn-primary"
+                                            onClick={() => handleExcluirAssistido(usuario.id)}>Excluir</button>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>

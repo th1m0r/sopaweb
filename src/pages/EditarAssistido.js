@@ -25,7 +25,7 @@ export default function EditarAssistido({ history, match }) {
             const response = await api.get(`/assistidos/${match.params.codigo}`);
             setAssistido(response.data);
         }
-        if(match.params.codigo) loadAssistido()
+        loadAssistido()
     }, [match.params.codigo])
 
 
@@ -89,7 +89,8 @@ export default function EditarAssistido({ history, match }) {
                             <option value="N">Não Cadastrado</option>
                         </select>
                     </div>
-                    <button className="btn btn-primary pull-right" type="submit">Salvar</button>
+                    <button className="btn btn-primary" type="button" onClick={() => history.push("/pesquisa")}>Cancelar</button>&nbsp;&nbsp;
+                    <button className="btn btn-primary" type="submit">Salvar</button>
                 </form>
             </div>
         </div >
