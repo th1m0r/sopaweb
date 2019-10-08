@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './include/bootstrap';
 
-import Login from './Login';
+import App from './App';
 
 
 
 ReactDOM.render(
     <BrowserRouter>
-        <Login />
+        <App />
     </BrowserRouter>,
     document.getElementById('root'));
 

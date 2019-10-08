@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import './CadastroAssistido.css';
+import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 
 
-export default function CadastroAssistido() {
+export default function EditarAssistido({ history, match }) {
 
     const [assistido, setAssistido] = useState({
         id: '',
@@ -17,15 +16,17 @@ export default function CadastroAssistido() {
         e.preventDefault();
         const response = await api.post("/assistidos", assistido);
         if (response.status === 201) {
-            setAssistido({
-                id: '',
-                nome: '',
-                dataNascimento: '',
-                ponto: { id: 0, nome: '' },
-                situacao: 'N'
-            });
+            history.push("/pesquisa")
         }
     }
+
+    useEffect(() => {
+        async function loadAssistido() {
+            const response = await api.get(`/assistidos/${match.params.codigo}`);
+            setAssistido(response.data);
+        }
+        if(match.params.codigo) loadAssistido()
+    }, [match.params.codigo])
 
 
     return (

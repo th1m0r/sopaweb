@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 
 
-export default function PesquisaAssitido() {
+export default function PesquisaAssitido({ history }) {
     const [assistidos, setAssistidos] = useState([]);
     const [ponto, setPonto] = useState('0');
     const [nome, setNome] = useState('');
@@ -15,6 +15,10 @@ export default function PesquisaAssitido() {
         }
         loadAssistidos();
     }, [nome, ponto, situacao]);
+
+    function handleEditarAssistido(codigo) {
+        history.push(`/editar/${codigo}`);
+    }
 
     return (
         <div className="container-fluid">
@@ -45,9 +49,9 @@ export default function PesquisaAssitido() {
                                 value={ponto}
                                 onChange={e => setPonto(e.target.value)} >
                                 <option value="0">Selecione ...</option>
-                                <option value="1">Catedral</option>
-                                <option value="2">Praça da mão</option>
-                                <option value="3">Alecrim</option>
+                                <option value="1">Ponto 1</option>
+                                <option value="2">Ponto 2</option>
+                                <option value="3">Ponto 3</option>
                             </select>
                         </div>
                         <div className="form-group col-sm-2">
@@ -56,9 +60,9 @@ export default function PesquisaAssitido() {
                                 value={situacao}
                                 onChange={e => setSituacao(e.target.value)}>
                                 <option value="0">Selecione ...</option>
-                                <option value="N">Não Cadastrado</option>
-                                <option value="A">Apto</option>
                                 <option value="C">Cadastrado</option>
+                                <option value="A">Apto</option>
+                                <option value="N">Não Cadastrado</option>
                             </select>
                         </div>
                     </div>
@@ -78,6 +82,7 @@ export default function PesquisaAssitido() {
                                     <td>{usuario.nome}</td>
                                     <td>{usuario.ponto.nome}</td>
                                     <td>{usuario.situacao === 'A' ? 'APTO' : usuario.situacao === 'N' ? 'NÃO CADASTRADO' : 'CADASTRADO'}</td>
+                                    <td><button type="button" onClick={() => handleEditarAssistido(usuario.id)}>Editar</button></td>
                                 </tr>
                             ))}
                         </tbody>

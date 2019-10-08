@@ -43,9 +43,9 @@ export default function FrequenciaAssistidos() {
                                 value={ponto}
                                 onChange={e => setPonto(e.target.value)} >
                                 <option value="0">Selecione ...</option>
-                                <option value="1">Catedral</option>
-                                <option value="2">Praça da mão</option>
-                                <option value="3">Alecrim</option>
+                                <option value="1">Ponto 1</option>
+                                <option value="2">Ponto 2</option>
+                                <option value="3">Ponto 3</option>
                             </select>
                         </div>
                     </div>

@@ -10,6 +10,7 @@ import Rodape from './pages/Rodape';
 import Login from './Login';
 import ListagemAniversariantes from './pages/ListagemAniversariantes';
 import FrequenciaAssistidos from './pages/FrequenciaAssistidos';
+import EditarAssistido from './pages/EditarAssistido';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/pesquisa" component={PesquisaAssistido} />
               <Route path="/aniversariantes" component={ListagemAniversariantes} />
               <Route path="/frequencia" component={FrequenciaAssistidos} />
+              <Route path="/editar/:codigo" component={EditarAssistido} />
             </Switch>
           </div>
         </div>
