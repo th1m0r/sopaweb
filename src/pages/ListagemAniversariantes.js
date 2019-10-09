@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
+import ContentHeader from './common/template/contentHeader';
+import Content from './common/template/content';
 
 export default function ListagemAniversariantes() {
     const [assistidos, setAssistidos] = useState([]);
@@ -16,19 +18,14 @@ export default function ListagemAniversariantes() {
 
 
     return (
-        <div className="aw-layout-content">
-            <div className="page-header">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-xs-10">
-                            <h2>Listagem de aniversariantes</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+           <ContentHeader title="Assistido" small="aniversariantes"/>
+           <Content>
+               
+           
             <form>
                 <div className="row">
-                    <div className="form-group col-sm-4">
+                    <div className="form-group col-sm-2">
                         <label className="control-label" htmlFor="mes">Mes</label>
                         <select id="mes" className="form-control"
                             value={mes}
@@ -72,6 +69,7 @@ export default function ListagemAniversariantes() {
                     </tbody>
                 </table>
             </div>
+            </Content>
         </div>
     )
 }

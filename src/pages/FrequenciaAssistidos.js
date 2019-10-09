@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 import Switch from "react-switch";
+import ContentHeader from './common/template/contentHeader';
+import Content from './common/template/content';
 
 
 export default function FrequenciaAssistidos() {
@@ -24,17 +26,9 @@ export default function FrequenciaAssistidos() {
     }
 
     return (
-        <div className="container-fluid">
-            <div className="page-header">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-xs-10">
-                            <h2>Frequência dos assistidos</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="container-fluid">
+        <>
+            <ContentHeader title="Assistidos" small="frequência" />
+            <Content>
                 <form>
                     <div className="row">
                         <div className="form-group col-sm-2">
@@ -78,7 +72,7 @@ export default function FrequenciaAssistidos() {
                     </table>
                 </div>
                 <button type="button" className="btn btn-primary" onClick={handleSalvarFrequencia}>Salvar</button>
-            </div>
-        </div >
+            </Content>
+        </>
     )
 }
