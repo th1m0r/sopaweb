@@ -5,7 +5,6 @@ import ContentHeader from './common/template/contentHeader';
 import Content from './common/template/content';
 import Row from './common/layout/row';
 import Grid from './common/layout/grid.js';
-import DatePicker from 'react-datepicker';
 
 export default function CadastroAssistido({ history }) {
 
