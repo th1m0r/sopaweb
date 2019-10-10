@@ -26,16 +26,15 @@ export default function Header() {
                     <ul className="nav navbar-nav">
                         <li className="dropdown user user-menu">
                             <a href="fake_url" className="dropdown-toggle" data-toggle="dropdown">
-                                <img src="dist/img/pp.jpg" className="user-image" alt="User" />
-                                <span className="hidden-xs">Daniela</span>
+                                <img src="http://lorempixel.com/160/160/abstract" className="user-image" alt="User" />
+                                <span className="hidden-xs">Beltrano</span>
                             </a>
                             <ul className="dropdown-menu">
                                 {/* User image */}
                                 <li className="user-header">
-                                    <img src="dist/img/pp.jpg" className="img-circle" alt="User" />
+                                    <img src="http://lorempixel.com/160/160/abstract" className="img-circle" alt="User" />
                                     <p>
-                                        Daniela - Cantora do coral
-                <small>Membro desde 2012</small>
+                                    Beltrano - Obreiro do Amor <small>Membro desde 2007</small>
                                     </p>
                                 </li>
                                 {/* Menu Body */}

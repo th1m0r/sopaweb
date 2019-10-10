@@ -3,8 +3,9 @@ import api from '../services/api';
 
 import ContentHeader from './common/template/contentHeader';
 import Content from './common/template/content';
-import Row from './common/layout/row'
-import Grid from './common/layout/grid.js'
+import Row from './common/layout/row';
+import Grid from './common/layout/grid.js';
+import DatePicker from 'react-datepicker';
 
 export default function CadastroAssistido({ history }) {
 
@@ -33,7 +34,7 @@ export default function CadastroAssistido({ history }) {
 
     return (
         <>
-            <ContentHeader title="Assistidos" small="cadastro"/>
+            <ContentHeader title="Assistidos" small="cadastro" />
             <Content>
                 <Row>
                     <Grid cols="12 6">
