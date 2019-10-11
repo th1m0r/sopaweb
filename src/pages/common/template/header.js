@@ -27,14 +27,14 @@ export default function Header() {
                         <li className="dropdown user user-menu">
                             <a href="fake_url" className="dropdown-toggle" data-toggle="dropdown">
                                 <img src="http://lorempixel.com/160/160/abstract" className="user-image" alt="User" />
-                                <span className="hidden-xs">Beltrano</span>
+                                <span className="hidden-xs">Sopa</span>
                             </a>
                             <ul className="dropdown-menu">
                                 {/* User image */}
                                 <li className="user-header">
                                     <img src="http://lorempixel.com/160/160/abstract" className="img-circle" alt="User" />
                                     <p>
-                                    Beltrano - Obreiro do Amor <small>Membro desde 2007</small>
+                                    Sopa - Sociedade de obreiros que partilham o Amor <small>Membro desde 2007</small>
                                     </p>
                                 </li>
                                 {/* Menu Body */}
