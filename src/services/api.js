@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-const REMOTO = "https://apisopa.herokuapp.com/sopa/api"
-//const LOCAL = "http://192.168.0.23:8080/sopa/api"
+import consts from '../consts';
+
+
 const api = axios.create({
-    baseURL: REMOTO,
+    baseURL: consts.API_URL,
 });
 
 export default api;

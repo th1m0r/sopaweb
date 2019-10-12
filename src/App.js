@@ -1,8 +1,7 @@
+import './pages/common/template/dependencies';
 import React from 'react';
-import { HashRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom';
 
-
-import './pages/common/template/custom.css'
 import Header from './pages/common/template/header';
 import SideBar from './pages/common/template/sideBar';
 import Footer from './pages/common/template/footer';
