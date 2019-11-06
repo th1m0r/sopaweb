@@ -1,12 +1,13 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router'
 
-import CadastroAssistido from './pages/CadastroAssistido'
-import ListagemAssistidos from './pages/ListagemAssistidos'
-import ListagemAniversariantes from './pages/ListagemAniversariantes'
-import FrequenciaAssistidos from './pages/FrequenciaAssistidos'
 import Dashboard from './pages/dashboard/Dashboard'
 import EditarAssistido from './pages/EditarAssistido'
+import CadastroAssistido from './pages/CadastroAssistido'
+import ListagemAssistidos from './pages/ListagemAssistidos'
+import FrequenciaAssistidos from './pages/FrequenciaAssistidos'
+import ListagemAniversariantes from './pages/ListagemAniversariantes'
+
 
 export default function Routes() {
 
