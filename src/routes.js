@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router'
 
-import Dashboard from './pages/dashboard/Dashboard'
+import Dashboard from './pages/Dashboard'
 import EditarAssistido from './pages/EditarAssistido'
 import CadastroAssistido from './pages/CadastroAssistido'
 import ListagemAssistidos from './pages/ListagemAssistidos'
