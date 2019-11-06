@@ -44,8 +44,8 @@ export default function FrequenciaAssistidos() {
                         </div>
                     </div>
                 </form>
-                <div className="table-responsive">
-                    <table className="table table-stripped" style={{marginBottom: 10, width: 90}}>
+                <div className="kkk">
+                    <table className="table table-stripped" style={{marginBottom: 10}}>
                         <thead>
                             <tr>
                                 <th>Nome</th>
