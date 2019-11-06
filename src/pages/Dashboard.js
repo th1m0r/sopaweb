@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-import ContentHeader from '../common/template/contentHeader'
-import Content from '../common/template/content'
-import Row from '../common/layout/row'
-import api from '../../services/api';
+import ContentHeader from './common/template/contentHeader'
+import Content from './common/template/content'
+import Row from './common/layout/row'
+import api from '../services/api';
 
 export default function Dashboard() {
     const [dashboard, setDashboard] = useState({});
