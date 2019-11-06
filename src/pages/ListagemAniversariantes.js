@@ -49,7 +49,7 @@ export default function ListagemAniversariantes() {
                     </div>
                 </form>
                 <div className="table-responsive">
-                    <table className="table table-stripped">
+                    <table className="table table-stripped" style={{marginBottom: 20}}>
                         <thead>
                             <tr>
                                 <th>Nome</th>
