@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import ContentHeader from '../common/template/contentHeader'
 import Content from '../common/template/content'
 import Row from '../common/layout/row'
+import api from '../../services/api';
 
-export default function dashboard() {
+export default function Dashboard() {
+    const [dashboard, setDashboard] = useState({});
+    useEffect(() => {
+        async function loadDashboad() {
+            const response = await api.get('/dashboard');
+            setDashboard(response.data);
+        }
+        loadDashboad();
+    }, []);
+
     return (
         <>
             <ContentHeader title="Dashboard" />
@@ -15,7 +25,7 @@ export default function dashboard() {
                             <span className="info-box-icon bg-red"><i className="ion ion-ios-people-outline" /></span>
                             <div className="info-box-content">
                                 <span className="info-box-text">Assistidos</span>
-                                <span className="info-box-number">532</span>
+                                <span className="info-box-number">{dashboard.numeroAssistidos}</span>
                             </div>
                             {/* /.info-box-content */}
                         </div>
@@ -29,7 +39,7 @@ export default function dashboard() {
                             <span className="info-box-icon bg-green"><i className="fa fa-birthday-cake" /></span>
                             <div className="info-box-content">
                                 <span className="info-box-text">Aniversariantes</span>
-                                <span className="info-box-number">23</span>
+                                <span className="info-box-number">{dashboard.aniversariantes}</span>
                             </div>
                             {/* /.info-box-content */}
                         </div>
@@ -41,7 +51,7 @@ export default function dashboard() {
                             <span className="info-box-icon bg-yellow"><i className="ion ion-person-add" /></span>
                             <div className="info-box-content">
                                 <span className="info-box-text">Aptos</span>
-                                <span className="info-box-number">10</span>
+                                <span className="info-box-number">{dashboard.aptos}</span>
                             </div>
                             {/* /.info-box-content */}
                         </div>

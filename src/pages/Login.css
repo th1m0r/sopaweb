@@ -1,3 +1,6 @@
+.wrapper {
+    background-color: #fff!important;
+}
 img {
     margin-bottom: 20px;
 }
@@ -9,10 +12,12 @@ img {
 }
 
 .login-container form {
+    margin-top: 50vh;
     width: 100%;
     max-width: 300px;
     display: flex;
     flex-direction: column;
+    transform: translateY(-50%);
 }
 
 .login-container form input {
