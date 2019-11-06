@@ -8,11 +8,11 @@ import api from '../../services/api';
 export default function Dashboard() {
     const [dashboard, setDashboard] = useState({});
     useEffect(() => {
-        async function loadDashboad() {
+        async function loadDashboard() {
             const response = await api.get('/dashboard');
             setDashboard(response.data);
         }
-        loadDashboad();
+        loadDashboard();
     }, []);
 
     return (
