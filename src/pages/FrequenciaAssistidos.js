@@ -66,7 +66,7 @@ export default function FrequenciaAssistidos() {
                         </tbody>
                     </table>
                 </div>
-                <button type="button" style={{marginBottom: 30}} className="btn btn-primary" onClick={handleSalvarFrequencia}>Salvar</button>
+                <button type="button" style={{marginBottom: 40}} className="btn btn-primary" onClick={handleSalvarFrequencia}>Salvar</button>
             </Content>
         </>
     )
