@@ -45,7 +45,7 @@ export default function FrequenciaAssistidos() {
                     </div>
                 </form>
                 <div className="table-responsive">
-                    <table className="table table-stripped" style={{marginBottom: 20, width: 80}}>
+                    <table className="table table-stripped" style={{marginBottom: 10, width: 90}}>
                         <thead>
                             <tr>
                                 <th>Nome</th>
@@ -55,7 +55,7 @@ export default function FrequenciaAssistidos() {
                         <tbody>
                             {frequencias.map((frequencia, key) => (
                                 <tr key={key}>
-                                    <td>{frequencia.assistido.nome.substring(0,20)}</td>
+                                    <td>{frequencia.assistido.nome}</td>
                                     <td>
                                         <Switch onChange={e => {
                                             frequencias[key].presente = e;
@@ -66,7 +66,7 @@ export default function FrequenciaAssistidos() {
                         </tbody>
                     </table>
                 </div>
-                <button type="button" className="btn btn-primary" onClick={handleSalvarFrequencia}>Salvar</button>
+                <button type="button" style={{marginBottom: 30}} className="btn btn-primary" onClick={handleSalvarFrequencia}>Salvar</button>
             </Content>
         </>
     )

@@ -40,7 +40,7 @@ export default function EditarAssistido({ history, match }) {
             <Content>
                 <Row>
                     <Grid cols="12 6">
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} style={{marginBottom: 20}}>
                             <div className="form-group">
                                 <label className="control-label" htmlFor="codigo">Código</label>
                                 <input id="codigo"
