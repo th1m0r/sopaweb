@@ -55,7 +55,7 @@ export default function FrequenciaAssistidos() {
                         <tbody>
                             {frequencias.map((frequencia, key) => (
                                 <tr key={key}>
-                                    <td>{frequencia.assistido.nome}</td>
+                                    <td>{frequencia.assistido.nome.substring(0,20)}</td>
                                     <td>
                                         <Switch onChange={e => {
                                             frequencias[key].presente = e;
