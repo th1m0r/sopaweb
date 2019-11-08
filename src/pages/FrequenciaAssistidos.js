@@ -45,7 +45,7 @@ export default function FrequenciaAssistidos() {
                     </div>
                 </form>
                 <div className="kkk">
-                    <table className="table table-stripped" style={{marginBottom: 10}}>
+                    <table className="table table-stripped" >
                         <thead>
                             <tr>
                                 <th>Nome</th>
@@ -66,7 +66,7 @@ export default function FrequenciaAssistidos() {
                         </tbody>
                     </table>
                 </div>
-                <button type="button" style={{marginBottom: 40}} className="btn btn-primary" onClick={handleSalvarFrequencia}>Salvar</button>
+                <button type="button" className="btn btn-primary" onClick={handleSalvarFrequencia}>Salvar</button>
             </Content>
         </>
     )

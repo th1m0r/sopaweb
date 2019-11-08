@@ -70,7 +70,7 @@ export default function PesquisaAssitido({ history }) {
                         </div>
                     </form>
                     <div className="table-responsive">
-                        <table className="table table-stripped" style={{marginBottom: 30}}>
+                        <table className="table table-stripped">
                             <thead>
                                 <tr>
                                     <th>Nome</th>
@@ -105,7 +105,6 @@ export default function PesquisaAssitido({ history }) {
                     </div>
                 </div>
             </Content>
-
         </>
     )
 }

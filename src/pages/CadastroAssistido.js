@@ -37,7 +37,7 @@ export default function CadastroAssistido({ history }) {
             <Content>
                 <Row>
                     <Grid cols="12 6">
-                        <form onSubmit={handleSubmit} style={{marginBottom: 30}}>
+                        <form onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label className="control-label" htmlFor="codigo">Código</label>
                                 <input id="codigo"
@@ -56,7 +56,7 @@ export default function CadastroAssistido({ history }) {
                                     onChange={e => setAssistido({ ...assistido, nome: e.target.value })} />
                             </div>
                             <div className="form-group">
-                                <label className="control-label" htmlFor="dataNascimento">Data nascimento</label>
+                                <label className="control-label" htmlFor="dataNascimento">Data de nascimento</label>
                                 <input id="dataNascimento"
                                     type="date" className="form-control"
                                     placeholder="Informe data de nascimento"
