@@ -3,13 +3,13 @@ import api from '../services/api';
 import Switch from "react-switch";
 import ContentHeader from './common/template/contentHeader';
 import Content from './common/template/content';
-import moment from 'moment'
+import DatePicker from 'react-datepicker';
 
 
 export default function FrequenciaAssistidos() {
     const [frequencias, setFrequencias] = useState([]);
     const [ponto, setPonto] = useState(0);
-    const [dataDistribuicao, setDataDistribuicao] = useState('0');
+    const [dataDistribuicao, setDataDistribuicao] = useState(new Date());
 
     useEffect(() => {
         async function loadAssistidos() {
@@ -45,38 +45,37 @@ export default function FrequenciaAssistidos() {
                             </select>
                         </div>
 
-                        {/*<div className="form-group col-sm-3">
+                        <div className="form-group col-sm-3">
                             <label className="control-label" htmlFor="dataNascimento">Data</label>
-                            <input id="dataDistribuicao"
-                                type="date" className="form-control"
-                                placeholder="Informe a data de distribuição"
-                                value={dataDistribuicao}
-                                onChange={e => setDataDistribuicao(e.target.value)} />
-                        </div> */}
+                            <DatePicker id="dataDistribuicao"
+                                selected={dataDistribuicao}
+                                dateFormat="dd/MM/yyyy"
+                                className="form-control"
+                                onChange={date => setDataDistribuicao(date)} />
+                        </div>
                     </div>
                 </form>
-                <div className="kkk">
-                    <table className="table table-stripped" >
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Presente?</th>
+
+                <table className="table table-stripped" >
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Presente?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {frequencias.map((frequencia, key) => (
+                            <tr key={key}>
+                                <td>{frequencia.assistido.nome}</td>
+                                <td>
+                                    <Switch onChange={e => {
+                                        frequencias[key].presente = e;
+                                    }} checked={frequencia.presente} />
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {frequencias.map((frequencia, key) => (
-                                <tr key={key}>
-                                    <td>{frequencia.assistido.nome}</td>
-                                    <td>
-                                        <Switch onChange={e => {
-                                            frequencias[key].presente = e;
-                                        }} checked={frequencia.presente} />
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                        ))}
+                    </tbody>
+                </table>
                 <button type="button" className="btn btn-primary" onClick={handleSalvarFrequencia}>Salvar</button>
             </Content>
         </>

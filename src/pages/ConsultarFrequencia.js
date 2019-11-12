@@ -6,21 +6,38 @@ import Content from './common/template/content';
 import Row from './common/layout/row'
 import Grid from './common/layout/grid.js'
 
-export default function ConsultarFrequencia({ match }) {
-    const [assistido, setAssistido] = useState({ frequencias: [] });
+export default function ConsultarFrequencia({ history, match }) {
+    const [assistido, setAssistido] = useState({})
+    const [frequencias, setFrequencias] = useState([])
 
     useEffect(() => {
+        async function loadAssistido() {
+            const response = await api.get(`/assistidos/${match.params.codigo}`)
+            setAssistido(response.data)
+        }
         async function loadFrequencia() {
             const response = await api.get(`/frequencias/assistido/${match.params.codigo}`);
-            setAssistido(response.data);
+            setFrequencias(response.data)
         }
+        loadAssistido();
         loadFrequencia()
     }, [match.params.codigo]);
 
 
     return (
         <>
-            <ContentHeader title="Assistidos" small="lista frequencias" />
+            <Row>
+                <Grid cols="10 4">
+                    <ContentHeader title="Assistidos" small="lista frequencias" />
+                </Grid>
+                <Grid cols="2 2">
+                    <button className="btn btn-primary pull-right" title="Voltar"
+                        style={{marginTop: 10}}
+                        onClick={() => history.goBack()}>
+                        <i className='fa fa-reply'></i>
+                    </button>
+                </Grid>
+            </Row>
             <Content>
                 <Row>
                     <Grid cols="12 3">
@@ -46,7 +63,7 @@ export default function ConsultarFrequencia({ match }) {
                                 </tr>
                             </thead>
                             <tbody>
-                                {assistido.frequencias.map((frequencia, key) => (
+                                {frequencias.map((frequencia, key) => (
                                     <tr key={key}>
                                         <td>{frequencia.dataDistribuicao}</td>
                                         <td>{frequencia.presente ? 'SIM' : 'NÃO'}</td>
