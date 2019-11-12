@@ -3,20 +3,21 @@ import api from '../services/api';
 import Switch from "react-switch";
 import ContentHeader from './common/template/contentHeader';
 import Content from './common/template/content';
-import DatePicker from 'react-datepicker';
 
 
 export default function FrequenciaAssistidos() {
     const [frequencias, setFrequencias] = useState([]);
     const [ponto, setPonto] = useState(0);
-    const [dataDistribuicao, setDataDistribuicao] = useState(new Date());
+    const [dataDistribuicao, setDataDistribuicao] = useState(new Date().toISOString().substring(0, 10));
 
     useEffect(() => {
         async function loadAssistidos() {
-            const response = await api.get(`/frequencias/${ponto}`);
+            const response = await api.get(`/frequencias/ponto/${ponto}/dataDistribuicao/${dataDistribuicao}`);
             setFrequencias(response.data);
         }
-        loadAssistidos();
+        if (ponto !== 0) {
+            loadAssistidos();
+        }
     }, [ponto, dataDistribuicao]);
 
     async function handleSalvarFrequencia(e) {
@@ -47,11 +48,11 @@ export default function FrequenciaAssistidos() {
 
                         <div className="form-group col-sm-3">
                             <label className="control-label" htmlFor="dataNascimento">Data</label>
-                            <DatePicker id="dataDistribuicao"
-                                selected={dataDistribuicao}
-                                dateFormat="dd/MM/yyyy"
+                            <input type="date" id="dataDistribuicao"
+                                value={dataDistribuicao}
                                 className="form-control"
-                                onChange={date => setDataDistribuicao(date)} />
+                                pattern="dd/MM/yyyy"
+                                onChange={e => setDataDistribuicao(e.target.value)} />
                         </div>
                     </div>
                 </form>
@@ -71,6 +72,12 @@ export default function FrequenciaAssistidos() {
                                     <Switch onChange={e => {
                                         frequencias[key].presente = e;
                                     }} checked={frequencia.presente} />
+                                </td>
+                                <td className="hide">
+                                    {frequencia.id}
+                                </td>
+                                <td className="hide">
+                                    {frequencia.dataDistribuicao}
                                 </td>
                             </tr>
                         ))}
