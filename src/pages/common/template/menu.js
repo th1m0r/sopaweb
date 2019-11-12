@@ -7,7 +7,7 @@ export default function menu() {
         <ul className="sidebar-menu" data-widget="tree">
             <li className="header">Menu de opções</li>
             <MenuItem path='/' label='Dashboard' icon='dashboard' />
-            <MenuTree label='Assistido' icon='users'>
+            <MenuTree label='Assistidos' icon='users'>
                 <MenuItem path='/cadastro' label='Cadastro' icon='plus' />
                 <MenuItem path='/pesquisa' label='Listagem' icon='search' />
             </MenuTree>
