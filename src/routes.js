@@ -7,6 +7,7 @@ import CadastroAssistido from './pages/CadastroAssistido'
 import ListagemAssistidos from './pages/ListagemAssistidos'
 import FrequenciaAssistidos from './pages/FrequenciaAssistidos'
 import ListagemAniversariantes from './pages/ListagemAniversariantes'
+import ConsultarFrequencia from './pages/ConsultarFrequencia'
 
 
 export default function Routes() {
@@ -20,6 +21,7 @@ export default function Routes() {
                 <Route path="/aniversariantes" component={ListagemAniversariantes} />
                 <Route path="/frequencia" component={FrequenciaAssistidos} />
                 <Route path="/editar/:codigo" component={EditarAssistido} />
+                <Route path="/consultarFrequencia/:codigo" component={ConsultarFrequencia} />
                 <Redirect from='*' to='/' />
             </Switch>
         </div>

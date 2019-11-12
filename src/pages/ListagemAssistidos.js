@@ -22,6 +22,10 @@ export default function PesquisaAssitido({ history }) {
         history.push(`/editar/${codigo}`);
     }
 
+    function handleConsultarFrequencia(codigo) {
+        history.push(`/consultarFrequencia/${codigo}`);
+    }
+
     async function handleExcluirAssistido(codigo) {
         const response = await api.delete(`/assistidos/${codigo}`);
         if (response.status === 204) {
@@ -96,6 +100,12 @@ export default function PesquisaAssitido({ history }) {
                                                 className="btn btn-danger"
                                                 onClick={() => handleExcluirAssistido(usuario.id)}>
                                                 <i className="fa fa-trash-o"></i>
+                                            </button>
+
+                                            <button type="button"
+                                                className="btn btn-info"
+                                                onClick={() => handleConsultarFrequencia(usuario.id)}>
+                                                <i className='fa fa-calendar'></i>
                                             </button>
                                         </td>
                                     </tr>

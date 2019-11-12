@@ -3,11 +3,13 @@ import api from '../services/api';
 import Switch from "react-switch";
 import ContentHeader from './common/template/contentHeader';
 import Content from './common/template/content';
+import moment from 'moment'
 
 
 export default function FrequenciaAssistidos() {
     const [frequencias, setFrequencias] = useState([]);
     const [ponto, setPonto] = useState(0);
+    const [dataDistribuicao, setDataDistribuicao] = useState('0');
 
     useEffect(() => {
         async function loadAssistidos() {
@@ -15,7 +17,7 @@ export default function FrequenciaAssistidos() {
             setFrequencias(response.data);
         }
         loadAssistidos();
-    }, [ponto]);
+    }, [ponto, dataDistribuicao]);
 
     async function handleSalvarFrequencia(e) {
         const response = await api.post("/frequencias", frequencias);
@@ -42,6 +44,15 @@ export default function FrequenciaAssistidos() {
                                 <option value="3">Ponto 3</option>
                             </select>
                         </div>
+
+                        {/*<div className="form-group col-sm-3">
+                            <label className="control-label" htmlFor="dataNascimento">Data</label>
+                            <input id="dataDistribuicao"
+                                type="date" className="form-control"
+                                placeholder="Informe a data de distribuição"
+                                value={dataDistribuicao}
+                                onChange={e => setDataDistribuicao(e.target.value)} />
+                        </div> */}
                     </div>
                 </form>
                 <div className="kkk">
