@@ -40,13 +40,13 @@ export default function ConsultarFrequencia({ history, match }) {
             </Row>
             <Content>
                 <Row>
-                    <Grid cols="12 3">
+                    <Grid cols="12 2">
                         <div className="form-group">
                             <label className="control-label">Código</label>
                             <label className="form-control">{assistido.id}</label>
                         </div>
                     </Grid>
-                    <Grid cols="12 3">
+                    <Grid cols="12 6">
                         <div className="form-group">
                             <label className="control-label">Nome</label>
                             <label className="form-control">{assistido.nome}</label>

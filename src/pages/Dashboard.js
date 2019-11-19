@@ -5,7 +5,7 @@ import Content from './common/template/content'
 import Row from './common/layout/row'
 import api from '../services/api';
 
-export default function Dashboard() {
+export default function Dashboard({ history }) {
     const [dashboard, setDashboard] = useState({});
     useEffect(() => {
         async function loadDashboard() {
@@ -60,7 +60,7 @@ export default function Dashboard() {
                     {/* /.col */}
                     {/* fix for small devices only */}
                     <div className="clearfix visible-sm-block" />
-                    <div className="col-md-4 col-sm-6 col-xs-12">
+                    <div className="col-md-4 col-sm-6 col-xs-12" onClick={() => history.push('/listagemAptos')}>
                         <div className="info-box">
                             <span className="info-box-icon bg-aqua"><i className="ion ion-person-add" /></span>
                             <div className="info-box-content">
@@ -72,18 +72,18 @@ export default function Dashboard() {
                         {/* /.info-box */}
                     </div>
                     {/* /.col */}
-                    <div className="col-md-4 col-sm-6 col-xs-12">
-                        <div className="info-box">
-                            <span className="info-box-icon bg-green"><i className="fa fa-birthday-cake" /></span>
-                            <div className="info-box-content">
-                                <span className="info-box-text">Aniversariantes</span>
-                                <span className="info-box-number">{dashboard.aniversariantes}</span>
+                        <div className="col-md-4 col-sm-6 col-xs-12" onClick={() => history.push('/aniversariantes')}>
+                            <div className="info-box">
+                                <span className="info-box-icon bg-green"><i className="fa fa-birthday-cake" /></span>
+                                <div className="info-box-content">
+                                    <span className="info-box-text">Aniversariantes</span>
+                                    <span className="info-box-number">{dashboard.aniversariantes}</span>
+                                </div>
+                                {/* /.info-box-content */}
                             </div>
-                            {/* /.info-box-content */}
+                            {/* /.info-box */}
                         </div>
-                        {/* /.info-box */}
-                    </div>
-                    {/* /.col */}
+                     {/* /.col */}
                 </Row>
             </Content>
         </>

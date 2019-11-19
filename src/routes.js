@@ -7,6 +7,7 @@ import CadastroAssistido from './pages/CadastroAssistido'
 import ListagemAssistidos from './pages/ListagemAssistidos'
 import FrequenciaAssistidos from './pages/FrequenciaAssistidos'
 import ListagemAniversariantes from './pages/ListagemAniversariantes'
+import ListagemAptos from './pages/ListagemAptos'
 import ConsultarFrequencia from './pages/ConsultarFrequencia'
 
 
@@ -19,6 +20,7 @@ export default function Routes() {
                 <Route path="/cadastro" component={CadastroAssistido} />
                 <Route path="/pesquisa" component={ListagemAssistidos} />
                 <Route path="/aniversariantes" component={ListagemAniversariantes} />
+                <Route path="/listagemAptos" component={ListagemAptos} />
                 <Route path="/frequencia" component={FrequenciaAssistidos} />
                 <Route path="/editar/:codigo" component={EditarAssistido} />
                 <Route path="/consultarFrequencia/:codigo" component={ConsultarFrequencia} />

@@ -14,6 +14,7 @@ export default function ListagemAniversariantes() {
             setAssistidos(response.data);
         }
         loadAssistidos();
+        return () => setAssistidos([])
     }, [mes]);
 
 

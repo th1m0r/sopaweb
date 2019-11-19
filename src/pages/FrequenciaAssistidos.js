@@ -18,6 +18,7 @@ export default function FrequenciaAssistidos() {
         if (ponto !== 0) {
             loadAssistidos();
         }
+        return () => setFrequencias([])
     }, [ponto, dataDistribuicao]);
 
     async function handleSalvarFrequencia(e) {

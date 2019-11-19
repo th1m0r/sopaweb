@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+
 import api from '../services/api';
+
 import ContentHeader from './common/template/contentHeader';
 import Content from './common/template/content';
+import Grid from './common/layout/grid.js'
 
 
 export default function PesquisaAssitido({ history }) {
@@ -15,7 +18,8 @@ export default function PesquisaAssitido({ history }) {
             const response = await api.get(`/assistidos?nome=${nome}&ponto=${ponto}&situacao=${situacao}`);
             setAssistidos(response.data);
         }
-        loadAssistidos();
+        (ponto !== '0' || nome !== '' || situacao !== '0') && nome.length > 4 ? loadAssistidos() : setAssistidos([]);
+        return () => setAssistidos([])
     }, [nome, ponto, situacao]);
 
     function handleEditarAssistido(codigo) {
@@ -40,7 +44,7 @@ export default function PesquisaAssitido({ history }) {
                 <div className="container-fluid">
                     <form>
                         <div className="row">
-                            <div className="form-group col-sm-4">
+                            <Grid cols="12 4" className="form-group">
                                 <label className="control-label" htmlFor="nome">Nome</label>
                                 <input id="nome"
                                     autoComplete="off"
@@ -48,8 +52,8 @@ export default function PesquisaAssitido({ history }) {
                                     placeholder="Digite o nome do assistido"
                                     value={nome}
                                     onChange={e => setNome(e.target.value)} />
-                            </div>
-                            <div className="form-group col-sm-2">
+                            </Grid>
+                            <Grid cols="12 4" className="form-group">
                                 <label className="control-label" htmlFor="ponto">Ponto</label>
                                 <select id="ponto" className="form-control"
                                     value={ponto}
@@ -59,8 +63,8 @@ export default function PesquisaAssitido({ history }) {
                                     <option value="2">Ponto 2</option>
                                     <option value="3">Ponto 3</option>
                                 </select>
-                            </div>
-                            <div className="form-group col-sm-2">
+                            </Grid>
+                            <Grid cols="12 4" className="form-group">
                                 <label className="control-label" htmlFor="situacao">Situção</label>
                                 <select id="situacao" className="form-control"
                                     value={situacao}
@@ -70,7 +74,7 @@ export default function PesquisaAssitido({ history }) {
                                     <option value="A">Apto</option>
                                     <option value="N">Não Cadastrado</option>
                                 </select>
-                            </div>
+                            </Grid>
                         </div>
                     </form>
                     <div className="table-responsive">
@@ -87,7 +91,7 @@ export default function PesquisaAssitido({ history }) {
                                 {assistidos.map(usuario => (
                                     <tr key={usuario.id}>
                                         <td>{usuario.nome}</td>
-                                        <td>{usuario.ponto.nome}</td>
+                                        <td className="text-center">{usuario.ponto.id}</td>
                                         <td>{usuario.situacao === 'A' ? 'APTO' : usuario.situacao === 'N' ? 'NÃO CADASTRADO' : 'CADASTRADO'}</td>
                                         <td>
                                             <button type="button"

@@ -9,5 +9,12 @@ button {
 }
 
 .table-actions {
+    text-align: center;
     width: 150px;
 }
+@media (max-width: 552px) {
+    .table-actions {
+        text-align: center;
+        width: 50px;
+    }
+  }
