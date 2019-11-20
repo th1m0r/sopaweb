@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
+import api from '../services/api';
+
 import ContentHeader from './common/template/contentHeader'
 import Content from './common/template/content'
 import Row from './common/layout/row'
-import api from '../services/api';
+import GraficoFrequencia from '../components/GraficoFrequencia'
 
 export default function Dashboard({ history }) {
     const [dashboard, setDashboard] = useState({});
@@ -72,19 +74,20 @@ export default function Dashboard({ history }) {
                         {/* /.info-box */}
                     </div>
                     {/* /.col */}
-                        <div className="col-md-4 col-sm-6 col-xs-12" onClick={() => history.push('/aniversariantes')}>
-                            <div className="info-box">
-                                <span className="info-box-icon bg-green"><i className="fa fa-birthday-cake" /></span>
-                                <div className="info-box-content">
-                                    <span className="info-box-text">Aniversariantes</span>
-                                    <span className="info-box-number">{dashboard.aniversariantes}</span>
-                                </div>
-                                {/* /.info-box-content */}
+                    <div className="col-md-4 col-sm-6 col-xs-12" onClick={() => history.push('/aniversariantes')}>
+                        <div className="info-box">
+                            <span className="info-box-icon bg-green"><i className="fa fa-birthday-cake" /></span>
+                            <div className="info-box-content">
+                                <span className="info-box-text">Aniversariantes</span>
+                                <span className="info-box-number">{dashboard.aniversariantes}</span>
                             </div>
-                            {/* /.info-box */}
+                            {/* /.info-box-content */}
                         </div>
-                     {/* /.col */}
+                        {/* /.info-box */}
+                    </div>
+                    {/* /.col */}
                 </Row>
+                <GraficoFrequencia />
             </Content>
         </>
     )
