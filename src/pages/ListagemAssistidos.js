@@ -18,7 +18,7 @@ export default function PesquisaAssitido({ history }) {
             const response = await api.get(`/assistidos?nome=${nome}&ponto=${ponto}&situacao=${situacao}`);
             setAssistidos(response.data);
         }
-        (ponto !== '0' || nome !== '' || situacao !== '0') && nome.length > 4 ? loadAssistidos() : setAssistidos([]);
+        (ponto !== '0' || (nome !== '' && nome.length > 4) || situacao !== '0') ? loadAssistidos() : setAssistidos([]);
         return () => setAssistidos([])
     }, [nome, ponto, situacao]);
 
