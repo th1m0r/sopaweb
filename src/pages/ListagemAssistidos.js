@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import api from '../services/api';
 
+import './ListagemAssistidos.css'
 import ContentHeader from './common/template/contentHeader';
 import Content from './common/template/content';
 import Grid from './common/layout/grid.js'
@@ -90,10 +91,10 @@ export default function PesquisaAssitido({ history }) {
                             <tbody>
                                 {assistidos.map(usuario => (
                                     <tr key={usuario.id}>
-                                        <td>{usuario.nome}</td>
-                                        <td className="text-center">{usuario.ponto.id}</td>
-                                        <td>{usuario.situacao === 'A' ? 'APTO' : usuario.situacao === 'N' ? 'NÃO CADASTRADO' : 'CADASTRADO'}</td>
-                                        <td>
+                                        <td data-label="Nome:">{usuario.nome}</td>
+                                        <td data-label="Ponto:">{usuario.ponto.id}</td>
+                                        <td data-label="Situação:">{usuario.situacao === 'A' ? 'APTO' : usuario.situacao === 'N' ? 'NÃO CADASTRADO' : 'CADASTRADO'}</td>
+                                        <td className="text-center">
                                             <button type="button"
                                                 className="btn btn-warning"
                                                 onClick={() => handleEditarAssistido(usuario.id)}>

@@ -1,0 +1,53 @@
+@media only screen and (max-width: 760px) , ( min-device-width : 768px)
+	and (max-device-width: 1024px) {
+	/* Força a tabela a mudar o modo de exibição*/
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Esconde o cabeçalho da tabela */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+    /* Adiciona uma borda externa em cada registro*/
+	tr {
+		border: 1px solid #ccc;
+	}
+
+    /* Configura a exibição dos campos do registro*/
+	td {
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 10px;
+	}
+	/* Coloca a descrição do campo antes dos valores, 
+		por meio da chamada do atributo data-label*/
+	td:before {
+		font-weight: bold;
+		padding-right: 20px;
+		font-size: 12px;
+		content: " " attr(data-label) "";
+	}
+}
+
+/* Smartphones (portrait and landscape) -----------*/ 
+@media only screen and (min-device-width : 320px) and (max-device-width
+	: 480px) {
+	body {
+		padding: 0;
+		margin: 0;
+		width: 320px;
+	}
+}
+
+/* iPads (portrait and landscape) -----------*/ 
+@media only screen and (min-device-width: 768px) and (max-device-width:
+	1024px) {
+	body {
+		width: 495px;
+	}
+}
