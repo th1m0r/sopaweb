@@ -78,7 +78,7 @@ export default function PesquisaAssitido({ history }) {
                             </Grid>
                         </div>
                     </form>
-                    <div className="table-responsive">
+                    <div className="">
                         <table className="table table-stripped">
                             <thead>
                                 <tr>
@@ -94,7 +94,7 @@ export default function PesquisaAssitido({ history }) {
                                         <td data-label="Nome:">{usuario.nome}</td>
                                         <td data-label="Ponto:">{usuario.ponto.id}</td>
                                         <td data-label="Situação:">{usuario.situacao === 'A' ? 'APTO' : usuario.situacao === 'N' ? 'NÃO CADASTRADO' : 'CADASTRADO'}</td>
-                                        <td className="text-center">
+                                        <td className="text-left">
                                             <button type="button"
                                                 className="btn btn-warning"
                                                 onClick={() => handleEditarAssistido(usuario.id)}>
