@@ -13,7 +13,7 @@ export default function GraficoFrequencia() {
                 borderWidth: 1,
                 hoverBackgroundColor: 'rgba(60,141,188,0.4)',
                 hoverBorderColor: 'rgba(60,141,188,1)',
-                data: [14,12,16,0]
+                data: [14,12,16,19]
             },
             {
                 label: 'Ponto 2',
@@ -22,7 +22,7 @@ export default function GraficoFrequencia() {
                 borderWidth: 1,
                 hoverBackgroundColor: 'rgba(21,220,90,0.4)',
                 hoverBorderColor: 'rgba(21,220,19,1)',
-                data: [31,23,41,0]
+                data: [31,23,41,35]
             },
             {
                 label: 'Ponto 3',
@@ -31,7 +31,7 @@ export default function GraficoFrequencia() {
                 borderWidth: 1,
                 hoverBackgroundColor: 'rgba(230,130,92,0.4)',
                 hoverBorderColor: 'rgba(230,130,92,1)',
-                data: [12,13,14,0]
+                data: [12,13,14,20]
             },
         ]
     })
