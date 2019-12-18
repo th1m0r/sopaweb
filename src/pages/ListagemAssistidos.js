@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import api from '../services/api';
 
-import './ListagemAssistidos.css'
+//import './ListagemAssistidos.css'
 import ContentHeader from './common/template/contentHeader';
 import Content from './common/template/content';
 import Grid from './common/layout/grid.js'

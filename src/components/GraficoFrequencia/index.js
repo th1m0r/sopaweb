@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { HorizontalBar, Bar } from 'react-chartjs-2'
+import { Bar } from 'react-chartjs-2'
 
 export default function GraficoFrequencia() {
 
     const [resumoMensal, setResumoMensal] = useState({
-        labels: ['07-11-2019', '14-11-2019','21-11-2019', '28-11-2019'],
+        labels: ['05-12-2019', '12-12-2019','19-12-2019', '26-12-2019'],
         datasets: [
             {
                 label: 'Ponto 1',
@@ -13,7 +13,7 @@ export default function GraficoFrequencia() {
                 borderWidth: 1,
                 hoverBackgroundColor: 'rgba(60,141,188,0.4)',
                 hoverBorderColor: 'rgba(60,141,188,1)',
-                data: [14,12,16,19]
+                data: [31,39,0,0]
             },
             {
                 label: 'Ponto 2',
@@ -22,7 +22,7 @@ export default function GraficoFrequencia() {
                 borderWidth: 1,
                 hoverBackgroundColor: 'rgba(21,220,90,0.4)',
                 hoverBorderColor: 'rgba(21,220,19,1)',
-                data: [31,23,41,35]
+                data: [40,29,0,0]
             },
             {
                 label: 'Ponto 3',
@@ -31,7 +31,7 @@ export default function GraficoFrequencia() {
                 borderWidth: 1,
                 hoverBackgroundColor: 'rgba(230,130,92,0.4)',
                 hoverBorderColor: 'rgba(230,130,92,1)',
-                data: [12,13,14,20]
+                data: [15,24,0,0]
             },
         ]
     })
@@ -58,15 +58,13 @@ export default function GraficoFrequencia() {
                             width={230}
                             options={{
                                 maintainAspectRatio: false,
-                                scales: {
+                                dataset: {
                                     yAxes: [{
                                         ticks: {
                                             beginAtZero: true
                                         }
-                                    }],
-                                    xAxes: [{
-                                        barPercentage: 0.9
-                                    }]
+                                    }],                              
+                                    barPercentage: 0.9
                                 }
                             }}
                         />
