@@ -16,7 +16,7 @@ export default function FrequenciaAssistidos() {
                 .toISOString()
                 .split("T")[0]
         )
-    }, [dataDistribuicao])
+    }, [])
 
     useEffect(() => {
         async function loadAssistidos() {
