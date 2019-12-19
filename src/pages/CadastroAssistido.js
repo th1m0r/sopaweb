@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SweetAlert from 'sweetalert2-react';
+
 import api from '../services/api';
 
 import ContentHeader from './common/template/contentHeader';
@@ -7,7 +9,9 @@ import Row from './common/layout/row';
 import Grid from './common/layout/grid.js';
 
 export default function CadastroAssistido({ history }) {
-
+    const [show, setShow] = useState(false);
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
     const [assistido, setAssistido] = useState({
         id: '',
         nome: '',
@@ -18,15 +22,30 @@ export default function CadastroAssistido({ history }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const response = await api.post("/assistidos", assistido);
-        if (response.status === 201) {
-            setAssistido({
-                id: '',
-                nome: '',
-                dataNascimento: '',
-                ponto: { id: 0, nome: '' },
-                situacao: 'N'
-            });
+        try {
+            const response = await api.post("/assistidos", assistido);
+            if (response.status === 201) {
+                setAssistido({
+                    id: '',
+                    nome: '',
+                    dataNascimento: '',
+                    ponto: { id: 0, nome: '' },
+                    situacao: 'N'
+                });
+            }
+        } catch (e) {
+            if(e.message.includes('Network')) {
+                setTitle("Erro")
+                setDescription("Sem conexão com o servidor")
+                setShow(true)
+            } 
+            else {
+                if(e.response.status===409) {
+                    setTitle(e.response.data.detalhe)
+                    setDescription(e.response.data.erro)
+                    setShow(true)
+                }
+            }
         }
     }
 
@@ -90,6 +109,12 @@ export default function CadastroAssistido({ history }) {
                     </Grid>
                 </Row>
             </Content>
+            <SweetAlert
+                show={show}
+                title={title}
+                text={description}
+                onConfirm={() => setShow(false)}
+             />
         </>
     )
 }

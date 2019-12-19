@@ -19,8 +19,8 @@ export default function EditarAssistido({ history, match }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const response = await api.post("/assistidos", assistido);
-        if (response.status === 201) {
+        const response = await api.put(`/assistidos/${assistido.id}`, assistido);
+        if (response.status === 204) {
             history.push("/pesquisa")
         }
     }

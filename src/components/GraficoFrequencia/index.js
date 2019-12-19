@@ -3,7 +3,7 @@ import { Bar } from 'react-chartjs-2'
 
 export default function GraficoFrequencia() {
 
-    const [resumoMensal, setResumoMensal] = useState({
+    const [resumoMensal] = useState({
         labels: ['05-12-2019', '12-12-2019','19-12-2019', '26-12-2019'],
         datasets: [
             {
