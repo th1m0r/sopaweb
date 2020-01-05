@@ -17,7 +17,7 @@ export default function FrequenciaAssistidos() {
                 .split("T")[0]
         )
         console.log('passei aqui')
-    },[dataDistribuicao])
+    },[])
 
     useEffect(() => {
         async function loadAssistidos() {
