@@ -58,13 +58,15 @@ export default function GraficoFrequencia() {
                             width={230}
                             options={{
                                 maintainAspectRatio: false,
-                                dataset: {
+                                scales: {
                                     yAxes: [{
                                         ticks: {
                                             beginAtZero: true
                                         }
-                                    }],                              
-                                    barPercentage: 0.4
+                                    }],
+                                    xAxes: [{
+                                        barPercentage: 0.9
+                                    }]
                                 }
                             }}
                         />
