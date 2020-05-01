@@ -64,7 +64,7 @@ export default function GraficoFrequencia() {
                                             beginAtZero: true
                                         }
                                     }],                              
-                                    barPercentage: 0.9
+                                    barPercentage: 0.4
                                 }
                             }}
                         />

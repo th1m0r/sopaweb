@@ -8,16 +8,10 @@ import Content from './common/template/content';
 export default function FrequenciaAssistidos() {
     const [frequencias, setFrequencias] = useState([]);
     const [ponto, setPonto] = useState(0);
-    const [dataDistribuicao, setDataDistribuicao] = useState(new Date());
-
-    useEffect(() => {
-        setDataDistribuicao(
-            new Date(dataDistribuicao.getTime() - (dataDistribuicao.getTimezoneOffset() * 60000))
+    const [dataDistribuicao, setDataDistribuicao] = useState(
+            new Date(new Date().getTime() - (new Date().getTimezoneOffset() * 60000))
                 .toISOString()
-                .split("T")[0]
-        )
-        console.log('passei aqui')
-    },[dataDistribuicao])
+                 .split("T")[0]);
 
     useEffect(() => {
         async function loadAssistidos() {
