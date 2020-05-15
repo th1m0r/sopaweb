@@ -17,14 +17,10 @@ export default function ListagemAniversariantes() {
         return () => setAssistidos([])
     }, [mes]);
 
-
-
     return (
         <div>
             <ContentHeader title="Assistido" small="aniversariantes" />
             <Content>
-
-
                 <form>
                     <div className="row">
                         <div className="form-group col-sm-2">
